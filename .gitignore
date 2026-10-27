@@ -1,0 +1,23 @@
+node_modules/
+coverage/
+*.log
+*.tmp
+*.tgz
+*.bak
+*.orig
+*.rej
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+Temp/
+
+# 本机凭据与运行数据一律不入库
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+pua-receipts.jsonl

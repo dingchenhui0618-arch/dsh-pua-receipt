@@ -1,0 +1,66 @@
+{
+  "name": "dsh-pua-receipt",
+  "version": "0.1.0",
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0",
+    "node": ">=22"
+  },
+  "description": "Measured /pua for DeepSeek Harness: every pressure message gets a receipt comparing N rounds before and after — tool calls, verification steps and repeated calls — plus an end-of-day ranking of which sentence actually moved the work.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "docs",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "prepack": "node scripts/build.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ],
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "dsh-pua",
+    "pua",
+    "pressure",
+    "receipt",
+    "experiment",
+    "verification"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dingchenhui0618-arch/dsh-pua-receipt.git"
+  },
+  "homepage": "https://github.com/dingchenhui0618-arch/dsh-pua-receipt#readme",
+  "bugs": {
+    "url": "https://github.com/dingchenhui0618-arch/dsh-pua-receipt/issues"
+  },
+  "license": "MIT"
+}
